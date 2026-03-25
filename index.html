@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora de Reparações – iGeeks</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<section class="repair-section">
+
+  <div class="section-header">
+    <h2>Calculadora de Reparações</h2>
+    <p>Descobre o preço da reparação do teu iPhone em segundos.</p>
+  </div>
+
+  <div class="layout">
+
+    <!-- 70% -->
+    <div class="layout-left">
+
+      <!-- STEP 1 -->
+      <div class="card" id="card-model">
+        <div class="card-title">
+          <span class="step-dot">1</span>
+          Escolhe o teu iPhone
+        </div>
+
+        <label class="field-label">Geração</label>
+        <div class="select-wrap">
+          <select id="genSelect">
+            <option value="">Seleciona a geração...</option>
+          </select>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+
+        <div id="variantBlock" class="hidden">
+          <label class="field-label" style="margin-top:20px">Variante</label>
+          <div class="variant-chips" id="variantChips"></div>
+        </div>
+
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="card hidden" id="card-services">
+        <div class="card-title">
+          <span class="step-dot">2</span>
+          Seleciona os serviços
+        </div>
+        <div id="servicesList"></div>
+      </div>
+
+    </div>
+
+    <!-- 30% -->
+    <div class="layout-right">
+      <div class="summary-card" id="summaryCard">
+        <div class="summary-header">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          Resumo
+        </div>
+
+        <div class="summary-model hidden" id="summaryModel"></div>
+
+        <div class="summary-empty" id="summaryEmpty">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <p>Seleciona um modelo e serviços para ver o preço estimado.</p>
+        </div>
+
+        <div class="summary-lines hidden" id="summaryLines"></div>
+
+        <div class="summary-total hidden" id="summaryTotal">
+          <span>Total estimado</span>
+          <span class="total-val" id="totalVal">0,00 €</span>
+        </div>
+
+        <div class="summary-note hidden" id="summaryNote">
+          Preço sujeito a confirmação presencial. Inclui peças e mão de obra.
+        </div>
+
+        <a target="_blank" class="cta-btn hidden" id="ctaBtn">
+          Marcar Reparação
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15" height="15"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

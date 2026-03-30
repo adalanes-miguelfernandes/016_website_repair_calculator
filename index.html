@@ -13,83 +13,175 @@
 
 <section class="repair-section">
 
-  <div class="section-header">
-    <h2>Calculadora de Reparações</h2>
-    <p>Descobre o preço da reparação do teu iPhone em segundos.</p>
+  <!-- ══ DEVICE PICKER ══ -->
+  <div id="devicePicker">
+    <div class="section-header">
+      <h2>Escolhe o teu Dispositivo</h2>
+      <p>Seleciona o dispositivo para ver os preços de reparação.</p>
+    </div>
+
+    <div class="device-grid">
+
+      <button class="device-card" data-device="iphone">
+        <div class="device-icon">
+          <!-- iPhone icon -->
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="16" y="4" width="32" height="56" rx="7" stroke="currentColor" stroke-width="3" fill="none"/>
+            <rect x="16" y="4" width="32" height="56" rx="7" fill="currentColor" opacity="0.06"/>
+            <line x1="16" y1="14" x2="48" y2="14" stroke="currentColor" stroke-width="2.5"/>
+            <line x1="16" y1="50" x2="48" y2="50" stroke="currentColor" stroke-width="2.5"/>
+            <circle cx="32" cy="57" r="2.5" fill="currentColor" opacity="0.4"/>
+            <rect x="27" y="7.5" width="10" height="3" rx="1.5" fill="currentColor" opacity="0.35"/>
+            <rect x="22" y="20" width="20" height="24" rx="3" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="28" cy="25" r="2" fill="currentColor" opacity="0.3"/>
+            <circle cx="36" cy="25" r="2" fill="currentColor" opacity="0.3"/>
+          </svg>
+        </div>
+        <span class="device-label">iPhone</span>
+      </button>
+
+      <button class="device-card" data-device="macbook">
+        <div class="device-icon">
+          <!-- MacBook icon -->
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="12" width="44" height="30" rx="4" stroke="currentColor" stroke-width="3" fill="none"/>
+            <rect x="10" y="12" width="44" height="30" rx="4" fill="currentColor" opacity="0.06"/>
+            <rect x="16" y="18" width="32" height="18" rx="2" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M4 42 H60 L57 50 H7 Z" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+            <rect x="26" y="42" width="12" height="2" rx="1" fill="currentColor" opacity="0.35"/>
+            <circle cx="32" cy="15.5" r="1.5" fill="currentColor" opacity="0.3"/>
+          </svg>
+        </div>
+        <span class="device-label">MacBook</span>
+      </button>
+
+      <button class="device-card" data-device="applewatch">
+        <div class="device-icon">
+          <!-- Apple Watch icon -->
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="4" width="8" height="10" rx="2" fill="currentColor" opacity="0.25" stroke="currentColor" stroke-width="2"/>
+            <rect x="46" y="4" width="8" height="10" rx="2" fill="currentColor" opacity="0.25" stroke="currentColor" stroke-width="2"/>
+            <rect x="10" y="50" width="8" height="10" rx="2" fill="currentColor" opacity="0.25" stroke="currentColor" stroke-width="2"/>
+            <rect x="46" y="50" width="8" height="10" rx="2" fill="currentColor" opacity="0.25" stroke="currentColor" stroke-width="2"/>
+            <path d="M10 13 H54 V51 H10 Z" rx="0" fill="none"/>
+            <rect x="10" y="13" width="44" height="38" rx="12" stroke="currentColor" stroke-width="3" fill="none"/>
+            <rect x="10" y="13" width="44" height="38" rx="12" fill="currentColor" opacity="0.06"/>
+            <circle cx="32" cy="32" r="10" stroke="currentColor" stroke-width="1.5" fill="currentColor" opacity="0.08"/>
+            <line x1="32" y1="26" x2="32" y2="32" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="32" y1="32" x2="37" y2="35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="32" cy="32" r="1.5" fill="currentColor"/>
+            <rect x="52" y="22" width="4" height="8" rx="2" fill="currentColor" opacity="0.35"/>
+          </svg>
+        </div>
+        <span class="device-label">Apple Watch</span>
+      </button>
+
+      <button class="device-card" data-device="ipad">
+        <div class="device-icon">
+          <!-- iPad icon -->
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="6" width="48" height="52" rx="6" stroke="currentColor" stroke-width="3" fill="none"/>
+            <rect x="8" y="6" width="48" height="52" rx="6" fill="currentColor" opacity="0.06"/>
+            <rect x="14" y="12" width="36" height="32" rx="2" fill="currentColor" opacity="0.1" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="32" cy="52" r="3" fill="currentColor" opacity="0.3"/>
+            <circle cx="32" cy="52" r="1.2" fill="currentColor" opacity="0.6"/>
+            <circle cx="11" cy="32" r="1.5" fill="currentColor" opacity="0.3"/>
+            <rect x="20" y="16" width="12" height="2" rx="1" fill="currentColor" opacity="0.25"/>
+            <rect x="20" y="20" width="24" height="2" rx="1" fill="currentColor" opacity="0.2"/>
+            <rect x="20" y="24" width="18" height="2" rx="1" fill="currentColor" opacity="0.2"/>
+          </svg>
+        </div>
+        <span class="device-label">iPad</span>
+      </button>
+
+    </div>
   </div>
 
-  <div class="layout">
+  <!-- ══ CALCULATOR ══ -->
+  <div id="calculatorSection" class="hidden">
 
-    <!-- 70% -->
-    <div class="layout-left">
+    <div class="section-header">
+      <button class="back-btn" id="backBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+        Voltar
+      </button>
+      <h2 id="calcTitle">Calculadora de Reparações</h2>
+      <p>Descobre o preço da reparação do teu dispositivo em segundos.</p>
+    </div>
 
-      <!-- STEP 1 -->
-      <div class="card" id="card-model">
-        <div class="card-title">
-          <span class="step-dot">1</span>
-          Escolhe o teu iPhone
+    <div class="layout">
+
+      <!-- 70% -->
+      <div class="layout-left">
+
+        <!-- STEP 1 -->
+        <div class="card" id="card-model">
+          <div class="card-title">
+            <span class="step-dot">1</span>
+            <span id="step1Label">Escolhe o teu iPhone</span>
+          </div>
+
+          <label class="field-label">Geração</label>
+          <div class="select-wrap">
+            <select id="genSelect">
+              <option value="">Seleciona a geração...</option>
+            </select>
+            <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+
+          <div id="variantBlock" class="hidden">
+            <label class="field-label" style="margin-top:20px">Variante</label>
+            <div class="variant-chips" id="variantChips"></div>
+          </div>
         </div>
 
-        <label class="field-label">Geração</label>
-        <div class="select-wrap">
-          <select id="genSelect">
-            <option value="">Seleciona a geração...</option>
-          </select>
-          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-        </div>
-
-        <div id="variantBlock" class="hidden">
-          <label class="field-label" style="margin-top:20px">Variante</label>
-          <div class="variant-chips" id="variantChips"></div>
+        <!-- STEP 2 -->
+        <div class="card hidden" id="card-services">
+          <div class="card-title">
+            <span class="step-dot">2</span>
+            Seleciona os serviços
+          </div>
+          <div id="servicesList"></div>
         </div>
 
       </div>
 
-      <!-- STEP 2 -->
-      <div class="card hidden" id="card-services">
-        <div class="card-title">
-          <span class="step-dot">2</span>
-          Seleciona os serviços
+      <!-- 30% -->
+      <div class="layout-right">
+        <div class="summary-card" id="summaryCard">
+          <div class="summary-header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            Resumo
+          </div>
+
+          <div class="summary-model hidden" id="summaryModel"></div>
+
+          <div class="summary-empty" id="summaryEmpty">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            <p>Seleciona um modelo e serviços para ver o preço estimado.</p>
+          </div>
+
+          <div class="summary-lines hidden" id="summaryLines"></div>
+
+          <div class="summary-total hidden" id="summaryTotal">
+            <span>Total estimado</span>
+            <span class="total-val" id="totalVal">0,00 €</span>
+          </div>
+
+          <div class="summary-note hidden" id="summaryNote">
+            Preço sujeito a confirmação presencial. Inclui peças e mão de obra.
+          </div>
+
+          <a target="_blank" class="cta-btn hidden" id="ctaBtn">
+            Marcar Reparação
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15" height="15"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
         </div>
-        <div id="servicesList"></div>
       </div>
 
     </div>
-
-    <!-- 30% -->
-    <div class="layout-right">
-      <div class="summary-card" id="summaryCard">
-        <div class="summary-header">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-          Resumo
-        </div>
-
-        <div class="summary-model hidden" id="summaryModel"></div>
-
-        <div class="summary-empty" id="summaryEmpty">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          <p>Seleciona um modelo e serviços para ver o preço estimado.</p>
-        </div>
-
-        <div class="summary-lines hidden" id="summaryLines"></div>
-
-        <div class="summary-total hidden" id="summaryTotal">
-          <span>Total estimado</span>
-          <span class="total-val" id="totalVal">0,00 €</span>
-        </div>
-
-        <div class="summary-note hidden" id="summaryNote">
-          Preço sujeito a confirmação presencial. Inclui peças e mão de obra.
-        </div>
-
-        <a target="_blank" class="cta-btn hidden" id="ctaBtn">
-          Marcar Reparação
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15" height="15"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
-    </div>
-
   </div>
+
 </section>
 
 <script src="script.js"></script>

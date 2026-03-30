@@ -50,6 +50,7 @@ body {
   color: var(--text);
   letter-spacing: -0.02em;
   margin-bottom: 6px;
+  font-family: 'Epilogue', sans-serif;
 }
 
 .section-header p {
@@ -57,6 +58,156 @@ body {
   color: var(--text-mid);
   font-weight: 400;
 }
+
+/* ── Back button ── */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--text-mid);
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all var(--t);
+  margin-bottom: 16px;
+}
+
+.back-btn:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+  background: var(--orange-light);
+}
+
+/* ══════════════════════════════
+   DEVICE PICKER
+══════════════════════════════ */
+#devicePicker .section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#devicePicker .section-header h2 {
+  font-size: 32px;
+}
+
+.device-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.device-card {
+  background: var(--bg-white);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px 20px 28px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  box-shadow: var(--shadow);
+  transition: all 0.22s ease;
+  font-family: var(--font);
+  position: relative;
+  overflow: hidden;
+}
+
+.device-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--orange-light);
+  opacity: 0;
+  transition: opacity var(--t);
+}
+
+.device-card:hover {
+  border-color: var(--orange);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+}
+
+.device-card:hover::before { opacity: 1; }
+
+.device-card:active { transform: translateY(-1px); }
+
+.device-icon {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  position: relative;
+  z-index: 1;
+  transition: color var(--t);
+}
+
+.device-icon svg {
+  width: 64px;
+  height: 64px;
+}
+
+.device-card:hover .device-icon { color: var(--orange-hover); }
+
+.device-label {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  position: relative;
+  z-index: 1;
+  font-family: 'Epilogue', sans-serif;
+  transition: color var(--t);
+}
+
+.device-card:hover .device-label { color: var(--orange-hover); }
+
+/* coming soon badge */
+.device-card.coming-soon {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.coming-soon-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--border);
+  color: var(--text-light);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border-radius: 100px;
+}
+
+/* ── Show / hide ── */
+.hidden { display: none !important; }
+
+/* ── Calculator section animation ── */
+#calculatorSection {
+  animation: fadeUp 0.3s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ══════════════════════════════
+   CALCULATOR (original styles)
+══════════════════════════════ */
 
 /* ── Layout 70/30 ── */
 .layout {
@@ -97,6 +248,7 @@ body {
   color: var(--text);
   letter-spacing: -0.01em;
   margin-bottom: 22px;
+  font-family: 'Epilogue', sans-serif;
 }
 
 .step-dot {
@@ -212,7 +364,6 @@ body {
   gap: 12px;
 }
 
-/* Service accordion item */
 .service-item {
   border: 1.5px solid var(--border);
   border-radius: var(--radius-md);
@@ -220,11 +371,8 @@ body {
   transition: border-color var(--t);
 }
 
-.service-item.has-selection {
-  border-color: var(--orange-border);
-}
+.service-item.has-selection { border-color: var(--orange-border); }
 
-/* Header row (always visible, clickable) */
 .service-header {
   display: flex;
   align-items: center;
@@ -279,7 +427,7 @@ body {
 .service-selected-label {
   font-size: 12px;
   font-weight: 700;
-  color: var(--orange);
+  color: var(--orange-hover);
   background: var(--orange-light);
   padding: 3px 9px;
   border-radius: 100px;
@@ -303,18 +451,15 @@ body {
   color: var(--orange);
 }
 
-/* Options panel (collapsible) */
 .service-options {
   display: none;
-  padding: 0 18px 16px;
+  padding: 14px 18px 16px;
   background: var(--bg-white);
   border-top: 1px solid var(--border);
-  padding-top: 14px;
 }
 
 .service-item.open .service-options { display: flex; }
 
-/* Options for services with types (radio) */
 .options-radio {
   display: flex;
   flex-wrap: wrap;
@@ -363,7 +508,6 @@ body {
   opacity: 0.75;
 }
 
-/* Direct select (no types) */
 .options-direct {
   display: flex;
   align-items: center;
@@ -426,9 +570,10 @@ body {
   margin-bottom: 20px;
   padding-bottom: 16px;
   border-bottom: 1px solid var(--border);
+  font-family: 'Epilogue', sans-serif;
 }
 
-.summary-header svg { color: var(--orange); }
+.summary-header svg { color: var(--orange-hover); }
 
 .summary-model {
   font-size: 13px;
@@ -506,7 +651,7 @@ body {
 .total-val {
   font-size: 22px;
   font-weight: 800;
-  color: var(--orange);
+  color: var(--orange-hover);
   letter-spacing: -0.02em;
 }
 
@@ -545,27 +690,22 @@ body {
 
 .cta-btn.hidden { display: none; }
 
-.hidden { display: none !important; }
-
 /* ── Responsive ── */
+@media (max-width: 900px) {
+  .device-grid { grid-template-columns: repeat(2, 1fr); max-width: 500px; }
+}
+
 @media (max-width: 820px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
-  .layout-right {
-    position: static;
-    order: -1;
-  }
-  .summary-card {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-  }
+  .layout { grid-template-columns: 1fr; }
+  .layout-right { position: static; order: -1; }
+  .summary-card { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
   .summary-header { width: 100%; margin-bottom: 0; padding-bottom: 12px; }
 }
 
 @media (max-width: 500px) {
   .repair-section { padding: 40px 16px 60px; }
   .card { padding: 20px 18px; }
+  .device-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .device-card { padding: 28px 14px 22px; }
+  .device-icon svg { width: 52px; height: 52px; }
 }
